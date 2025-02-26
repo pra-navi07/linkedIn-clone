@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      nav {
+        width: 100vw;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 10px grey;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-bottom: -5px;
+        z-index: 10;
+      }
+
+      .input-group {
+        width: 300px;
+        height: 40px;
+        /* margin-left:-20px; */
+      }
+
+      .left {
+        margin-left: -60px;
+      }
+
+      .search {
+        width: 300px;
+        height: 50px;
+      }
+
+      .right {
+        font-size: 19px;
+        margin-left: 100px;
+      }
+
+      .right p {
+        font-size: 15px;
+      }
+
+      .w {
+        height: 43px;
+      }
+      .w2 {
+        margin-top: -8px;
+        height: 50px;
+        padding-top: 10px;
+      }
+      .help {
+        margin-bottom: -12px;
+      }
+
+      .left-1 {
+        width: 19vw;
+        /* height: 100vh; */
+      }
+
+      .middle-1 {
+        width: 59vw;
+        /* height: 100vh; */
+      }
+
+      .right-1 {
+        width: 19vw;
+        min-height: 100vh;
+        position: sticky;
+        top: -800px;
+        /* background-color: aqua; */
+      }
+      body {
+        /* background-color: antiquewhite; */
+      }
+
+      .sec-1 {
+        margin-top: 50px;
+        /* min-height: 100vh; */
+        padding: 30px;
+        position: relative;
+        z-index: 0;
+      }
+
+      .leftone {
+        width: 100%;
+        /* height: 200px; */
+        min-height: auto;
+        background-color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+
+      .lefttwo {
+        width: 100%;
+        /* height: 100px; */
+        min-height: auto;
+        background-color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+      .leftfour {
+        width: 100%;
+        /* height: 100px; */
+        min-height: auto;
+        background-color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+
+      .leftthree {
+        width: 100%;
+        /* height: 160px; */
+        min-height: auto;
+        background-color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+
+      .middleone {
+        width: 100%;
+        /* height: 200px; */
+        min-height: auto;
+        
+        background-color: white;
+        margin-top: 15px;
+        border-radius: 10px;
+        border: 1px solid grey;
+        padding-bottom: 7px;
+      }
+      .middletwo {
+        width: 100%;
+        /* height: 300px; */
+        min-height: auto;
+        background-color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+      .middlethree {
+        width: 100%;
+        /* height: 900px; */
+        height: auto;
+        background-color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+      .middlefour {
+        width: 100%;
+        /* height: 300px; */
+        min-height: auto;
+        background-color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+
+      .rightone {
+        width: 100%;
+        height: 780px;
+        /* height: auto; */
+        background-color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+      .righttwo {
+        width: 100%;
+        min-height: 230px;
+        /* min-height: auto; */
+        background-color: white;
+        margin-top: 55px;
+        border-radius: 10px;
+        border: 1px solid grey;
+        /* padding-top: 50px; */
+        /* position: sticky; */
+        /* top: -700px; */
+      }
+
+      .hl2 {
+        padding-top: 18px;
+        margin-left: 10px;
+        font-size: 20px;
+      }
+      .pl2 {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+      .num {
+        margin-top: 20px;
+        margin-left: 90px;
+      }
+      .left3 {
+        padding-left: 20px;
+        padding-top: 5px;
+        font-weight: bold;
+      }
+      .pl4 {
+        font-size: 15px;
+        padding-left: 8px;
+        margin-top: 5px;
+      }
+      .pr1 {
+        font-size: 14px;
+      }
+      .puz1r {
+        font-size: 10px;
+      }
+     .rig2bg{
+      width: 100%;
+     }
+     .armco{
+      width: 70px;
+      position: relative;
+      bottom: 30px;
+      left:30px;
+      border: 2px solid white;
+     }
+     .compname{
+      font-size: 20px;
+      font-weight: 700px;
+      margin-left: 25px ;
+      position: relative;
+      bottom: 30px;
+     }
+     .textarm{
+      margin-left: 25px;
+      font-size: 13px;
+      position: relative;
+      bottom: 35px;
+     }
+     .foll{
+      margin-left: 25px;
+      width: 180px;
+      border-radius: 25px;
+      position: relative;
+      bottom: 35px;
+     }
+     .l1bg{
+      width: 100%;
+     }
+     .profimg{
+      width: 50px;
+      border-radius: 50%;
+      margin-left: 20px;
+      border-color: 2px solid white;
+      position: relative;
+      bottom: 25px;
+     }
+     .proftext{
+      font-size: 18px;
+      margin-left: 20px;
+      position: relative;
+      bottom: 25px;
+     }
+     .proftext1{
+      font-size: 11px;
+      margin-left: 20px;
+      position: relative;
+      bottom: 25px;
+     }
+     
+     .snistr{
+      font-size: 10px;
+     }
+     .snist{
+      margin-left: 20px;
+      position: relative;
+      bottom: 35px;
+     }
+     .m1l{
+      width: 35px;
+      border-radius: 50%;
+      padding-top: 17px;
+      margin-left: 4px;
+      border-color: 2px solid gray;
+     }
+     .bttn{
+      border-radius: 50px;
+      width: 600px;
+      border-radius: 25px;
+      padding: 7px;
+      padding-left: 7px;
+      font-size: 15px;
+      margin-top: 22px;
+      text-align: start;
+      background-color: transparent;
+      border-color: none;
+      border-color: black;
+     }
+     .mid2r1{
+
+     }
+     .mid2l1{
+      width: 35px;
+      border-radius: 50%;
+     }
+     .pad1{
+      font-size: 13px;
+      position: relative;
+      bottom: 8px;
+     }
+     .pad2{
+      font-size: 13px;
+      position: relative;
+      bottom: 25px;
+     }
+     .mid2{
+      font-size: 15px;
+      margin-left: 8px;
+      position: relative;
+      bottom: 35px;
+     }
+     .mid2-31{
+      width: 700px;
+      position: relative;
+      bottom: 45px;
+     }
+     .mid4{
+      padding-left: 7px;
+      position: relative;
+      bottom: 45px;
+      border-bottom:1px solid rgba(128, 128, 128, 0.276);
+     }
+     .mid6{
+      position: relative;
+      bottom: 30px;
+      margin-bottom: 10px;
+     }
+     .right-1:hover{
+    
+      cursor: pointer;
+     }
+
+     @media (max-width: 1100px) {
+        .right-1 {
+          display: none;
+        }
+        .left-1 {
+          width: 27vw;
+        }
+        .middle-1 {
+          width: 63vw;
+        }
+        .bttn{
+          width: 420px;
+        }
+        .mid2-31{
+          width: 63vw;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .right-1 {
+          display: none;
+        }
+        .left-1 {
+          display: none;
+        }
+        .middle-1 {
+          width: 80vw;
+        }
+        .bttn{
+          width: 400px;
+        }
+        .mid2-31{
+          width: 80vw;
+        }
+      }
+      @media (max-width:550px){
+        .right-1 {
+          display: none;
+        }
+        .left-1 {
+          display: none;
+        }
+        .middle-1 {
+          width: 80vw;
+        }
+        .bttn{
+          width: 310px;
+        }
+      }
+     
+    </style>
+  </head>
+
+  <body>
+    <nav class="d-flex justify-content-around align-items-center ">
+      <div class="left d-flex justify-content-center align-items-center m-1 d-md-none d-lg-flex d-sm-none d-xs-none">
+        <img src="logoLi.png" alt="logo" width="35px" />
+        <div class="search px-3 py-1">
+          <label class="visually-hidden" for="inlineFormInputGroupUsername"
+            >Username</label
+          >
+          <div class="input-group">
+            <div class="input-group-text">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="inlineFormInputGroupUsername"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="right d-flex justify-content-center align-items-center p-5">
+        <div
+          class="help w d-flex justify-content-center align-items-center flex-column border-bottom border-black border-2 px-3 mt-1"
+        >
+          <i class="fa-solid fa-house-chimney pt-1"></i>
+          <p>Home</p>
+        </div>
+        <div
+          class="help d-flex flex-column justify-content-center align-items-center px-3 py-1"
+        >
+          <i class="fa-solid fa-user-group pt-2" style="color: #878787"></i>
+          <p>Network</p>
+        </div>
+        <div
+          class="help d-flex flex-column justify-content-center align-items-center px-3"
+        >
+          <i class="fa-solid fa-briefcase pt-2" style="color: #878787"></i>
+          <p>Jobs</p>
+        </div>
+        <div
+          class="help d-flex flex-column justify-content-center align-items-center px-3 py-1"
+        >
+          <i class="fa-solid fa-comment pt-2" style="color: #878787"></i>
+          <p>Messaging</p>
+        </div>
+        <div
+          class="help w2 d-flex flex-column justify-content-center align-items-center px-3 border-end border-secondary border-2"
+        >
+          <i class="fa-solid fa-bell pt-2" style="color: #878787"></i>
+          <p>Notifications</p>
+        </div>
+        <div
+          class="help d-flex flex-column justify-content-center align-items-center px-3 mt-1 py-1"
+        >
+          <img src="dots[1].webp" width="24px" />
+          <p>For Bussiness</p>
+        </div>
+        <div
+          class="help d-flex flex-column justify-content-center align-items-center px-3 mt-1 py-1"
+        >
+          <img src="premium[2].png" width="25px" />
+          <p>Try Premium for 0$</p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- section-1 -->
+    <div
+      class="container-fluid sec-1 d-flex justify-content-center align-items-start gap-4"
+    >
+      <div class="left-1">
+        <div class="leftone">
+          <img src="linked.png.png" alt="" class="l1bg">
+          <img src="post.png" alt="" class="profimg">
+          <h5 class="proftext">Pranavi.K</h5>
+          <p class="proftext1">Attended Sreenidhi Institute Of Science And Technology</p>
+          <div class="snist d-flex">
+            <div class="snistl">
+              <img src="snistlogo.png" alt="" width="45px">
+            </div>
+            <div class="snistr">
+              <p>Sreenidhi Institute Of Science And Technology</p>
+            </div>
+          </div>
+
+        </div>
+        <div
+          class="lefttwo d-flex flex-row align-items-center justify-content-around"
+        >
+          <div class="l2l">
+            <h4 class="hl2">Connections</h4>
+            <p class="text-secondary pl2">Connect with alumni</p>
+          </div>
+          <div>
+            <h3 class="fs-5 text-primary mx-3 mb-5 num">26</h3>
+          </div>
+        </div>
+        <div class="leftfour">
+          <p class="pl4 text-secondary">
+            Grow your career or business with Premium
+          </p>
+          <p class="pl4">
+            <img src="premium[2].png" width="25px" alt="" /> Try Premium for ₹0
+          </p>
+        </div>
+        <div
+          class="leftthree d-flex flex-column justify-content-center align-items-start"
+        >
+          <div
+            class="d-flex justify-content-center align-items-start gap-3 mt-3 left3"
+          >
+            <i class="fa-solid fa-bookmark"></i>
+            <p>Saved items</p>
+          </div>
+
+          <div
+            class="d-flex justify-content-center align-items-start gap-3 mb-2 left3"
+          >
+            <i class="fa-solid fa-people-group"></i>
+            <p class="mb-2">Groups</p>
+          </div>
+          <div
+            class="d-flex justify-content-center align-items-start gap-3 left3"
+          >
+            <i class="fa-solid fa-calendar-week"></i>
+            <p>Events</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="middle-1">
+        <div class="middleone">
+          <div class="mid1 d-flex justify-content-around align-items-center">
+            <div class="mid1l">
+              <img src="post.png" alt="" class="m1l">
+            </div>
+            <div class="mid1r">
+              <button  type="submit" class="bttn">Start a post</button>
+            </div>
+          </div>
+          <div class="d-flex justify-content-evenly">
+            <div class="d-flex gap-2 my-2">
+              <i class="fa-regular fa-image mt-3 text-primary"></i>
+              <p class="mt-2">Photo</p>
+            </div>
+            <div class="d-flex gap-2 my-2">
+              <i class="fa-solid fa-circle-play mt-3 text-success"></i>
+              <p class="mt-2">Video</p>
+            </div>
+            <div class="d-flex gap-2 my-2">
+              <i class="fa-regular fa-newspaper mt-3 text-danger"></i>
+              <p class="mt-2">Write article</p>
+            </div>
+          </div>
+        </div>
+        <div class="middletwo">
+          <div class="d-flex gap-3 mt-3 mx-2">
+            <div class="mid2l">
+              <img src="post.png" alt="" class="mid2l1">
+            </div>
+            <div class="mid2r d-flex justify-content-start align-items-start flex-column ">
+              <h6 class="mid2r1">Rosy Ling</h6>
+              <p class="pad1">Sreenidhi Institute Of Science And Technology</p>
+              <p class="pad2">3d.<i class="fa-solid fa-earth-africa text-secondary"></i></p>
+            </div>
+          </div>
+          <div class="mid2 ">
+            <p>🚀 I’m beyond thrilled to showcase my latest projec✨ CSS Grid Mastery📱 Fully Responsive – Perfect optimized for deskto…more</p>
+          </div>
+          <div class="mid2-3">
+            <img src="ligc.png" alt="" class="mid2-31">
+          </div>
+          <div class="d-flex mid4">
+            <div>
+              <img src="likeli.png" alt="" width="25px">
+            </div>
+            <div>
+              <p class="text-secondary">Rosy Ling and 9 others</p>
+            </div>
+          </div>
+            <div class="d-flex justify-content-evenly mid6">
+              <div class="d-flex ">
+                <div>
+                  <i class="fa-regular fa-thumbs-up gap-1"></i>
+                </div>
+                <div>
+                  <p>Like</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-1 ">
+                <div>
+                  <i class="fa-regular fa-comment"></i>                </div>
+                <div>
+                  <p>Comment</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-1 ">
+                <div>
+                  <i class="fa-solid fa-arrows-spin"></i>              </div>
+                <div>
+                  <p>Repost</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-1 ">
+                <div>
+                  <i class="fa-solid fa-paper-plane"></i>             </div>
+                <div>
+                  <p>Send</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="middlethree">
+          <div class="d-flex gap-3 mt-3 mx-2">
+            <div class="mid2l">
+              <img src="amityprof.png" alt="" class="mid2l1">
+            </div>
+            <div class="mid2r d-flex justify-content-start align-items-start flex-column ">
+              <h6 class="mid2r1">Amity University Online</h6>
+              <p class="pad1">40,138 followers</p>
+              <p class="pad2">Promoted<i class="fa-solid fa-earth-africa text-secondary"></i></p>
+            </div>
+          </div>
+          <div class="mid2 ">
+            <p>Get a Globally Accredited Online MBA Degree from Amity University.
+              …more</p>
+          </div>
+          <div class="mid2-3">
+            <img src="amity.png" alt="" class="mid2-31">
+          </div>
+          <div class="d-flex mid4">
+            <div>
+              <img src="likeli.png" alt="" width="25px">
+            </div>
+            <div>
+              <p class="text-secondary">Rosy Ling and 9 others</p>
+            </div>
+          </div>
+            <div class="d-flex justify-content-evenly mid6">
+              <div class="d-flex ">
+                <div>
+                  <i class="fa-regular fa-thumbs-up gap-1"></i>
+                </div>
+                <div>
+                  <p>Like</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-1 ">
+                <div>
+                  <i class="fa-regular fa-comment"></i>                </div>
+                <div>
+                  <p>Comment</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-1 ">
+                <div>
+                  <i class="fa-solid fa-arrows-spin"></i>              </div>
+                <div>
+                  <p>Repost</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-1 ">
+                <div>
+                  <i class="fa-solid fa-paper-plane"></i>             </div>
+                <div>
+                  <p>Send</p>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="middlefour">
+              <div class="d-flex gap-3 mt-3 mx-2">
+                <div class="mid2l">
+                  <img src="post.png" alt="" class="mid2l1">
+                </div>
+                <div class="mid2r d-flex justify-content-start align-items-start flex-column ">
+                  <h6 class="mid2r1">Rosy Ling</h6>
+                  <p class="pad1">Sreenidhi Institute Of Science And Technology</p>
+                  <p class="pad2">3d.<i class="fa-solid fa-earth-africa text-secondary"></i></p>
+                </div>
+              </div>
+              <div class="mid2 ">
+                <p>🚀 I’m beyond thrilled to showcase my latest projec✨ CSS Grid Mastery📱 Fully Responsive – Perfect optimized for deskto…more</p>
+              </div>
+              <div class="mid2-3">
+                <img src="lisplo.png" alt="" class="mid2-31">
+              </div>
+              <div class="d-flex mid4">
+                <div>
+                  <img src="likeli.png" alt="" width="25px">
+                </div>
+                <div>
+                  <p class="text-secondary">Rosy Ling and 9 others</p>
+                </div>
+              </div>
+                <div class="d-flex justify-content-evenly mid6">
+                  <div class="d-flex ">
+                    <div>
+                      <i class="fa-regular fa-thumbs-up gap-1"></i>
+                    </div>
+                    <div>
+                      <p>Like</p>
+                    </div>
+                  </div>
+    
+                  <div class="d-flex gap-1 ">
+                    <div>
+                      <i class="fa-regular fa-comment"></i>                </div>
+                    <div>
+                      <p>Comment</p>
+                    </div>
+                  </div>
+    
+                  <div class="d-flex gap-1 ">
+                    <div>
+                      <i class="fa-solid fa-arrows-spin"></i>              </div>
+                    <div>
+                      <p>Repost</p>
+                    </div>
+                  </div>
+    
+                  <div class="d-flex gap-1 ">
+                    <div>
+                      <i class="fa-solid fa-paper-plane"></i>             </div>
+                    <div>
+                      <p>Send</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+      <div class="right-1">
+        <div class="rightone">
+          <h4 class="mx-3 pt-3">Trending Now</h4>
+          <p class="text-secondary mx-3">curated by LinkedIn News</p>
+          <div class="news d-flex">
+            <div class="newsl">
+              <img src="news.png" width="55px" alt="" class="mx-3 mb-2" />
+            </div>
+            <div class="newsr">
+              <p class="text-danger">BREAKING NEWS</p>
+              <!-- <p>Infosys rolls out salary hikes</p> -->
+            </div>
+          </div>
+          <h6 class="mx-3 pr1">EV makers accelerating hiring</h6>
+          <p class="text-secondary pr1 mx-3">4h ago .1,194 readers</p>
+          <h6 class="mx-3 pr1">FMCG stocks take a hit</h6>
+          <p class="text-secondary pr1 mx-3">4h ago .417 readers</p>
+          <h6 class="mx-3 pr1">Smartwatches clock decline in sales</h6>
+          <p class="text-secondary pr1 mx-3">4h ago .348 readers</p>
+          <h6 class="mx-3 pr1">Tech revenue surges</h6>
+          <p class="text-secondary pr1 mx-3">5h ago .248 readers</p>
+          <h6 class="mx-3 pr1">NBFCs boost staff power</h6>
+          <p class="text-secondary pr1 mx-3">4h ago .220 readers</p>
+          <p class="mx-3">Show more <i class="fa-solid fa-angle-down"></i></p>
+          <h5 class="mx-3 mb-3">Today's puzzles</h5>
+          <div>
+            <div class="puzzle d-flex justify-content-around">
+              <div class="pb1 d-flex ">
+                <div>
+                  <img src="tango.png" alt="" class="mx-3">
+                </div>
+                <div>
+                  <h6>Tango</h6>
+                  <p class="text-secondary puz1r">Harmonize the grid</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="puzzle d-flex justify-content-around">
+              <div class="pb1 d-flex ">
+                <div>
+                  <img src="Queens.png" alt="" class="mx-3">
+                </div>
+                <div>
+                  <h6>Queens</h6>
+                  <p class="text-secondary puz1r">Crown each region</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-angle-right"></i>
+              </div>
+          </div>
+
+          <div class="puzzle d-flex justify-content-around">
+            <div class="pb1 d-flex ">
+              <div>
+                <img src="Pinpoint.png" alt="" class="mx-3">
+              </div>
+              <div>
+                <h6>Pinpoint</h6>
+                <p class="text-secondary puz1r">Guess the category</p>
+              </div>
+            </div>
+            <div>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="puzzle d-flex justify-content-around">
+            <div class="pb1 d-flex ">
+              <div>
+                <img src="crossw.png" alt="" class="mx-3">
+              </div>
+              <div>
+                <h6>Crossclimb</h6>
+                <p class="text-secondary puz1r">Unlock a trivia ladder</p>
+              </div>
+            </div>
+            <div>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="righttwo">
+          <img src="linked.png.png" alt="" class="rig2bg">
+          <img src="armco.png" alt="" class="armco">
+          <h6 class="compname">armco</h6>
+          <p class="textarm">Grow your career by following armco</p>
+          <button class="btn btn-outline-primary foll">Follow</button>
+        </div>
+        <!-- <div class="rightone"></div>
+        <div class="rightone"></div> -->
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
